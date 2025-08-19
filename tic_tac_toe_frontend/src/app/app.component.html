@@ -1,3 +1,15 @@
-<div class="container">
-  <h1>{{ title }}</h1>
-</div>
+<header class="header-bar">
+  <div class="container header-inner">
+    <div class="brand">Tic Tac Toe</div>
+    <a routerLink="/play" routerLinkActive="active" class="badge">Play</a>
+    <a routerLink="/history" routerLinkActive="active" class="badge">History</a>
+    <span class="spacer"></span>
+    <span class="badge" *ngIf="username(); else guest">Hi, {{ username() }}</span>
+    <ng-template #guest><a routerLink="/login" class="badge">Login</a></ng-template>
+    <button class="ghost" *ngIf="isAuthed()" (click)="logout()">Logout</button>
+  </div>
+</header>
+
+<main class="container" style="padding-block: 20px;">
+  <router-outlet></router-outlet>
+</main>

@@ -2,9 +2,23 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Angular</title>
+  <title>Tic Tac Toe</title>
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#00796B">
+  <!-- Optional: set via deployment to override API base URL -->
+  <meta name="api-base-url" content="">
+  <script>
+    (function() {
+      try {
+        var el = document.querySelector('meta[name="api-base-url"]');
+        var val = el && el.getAttribute('content');
+        if (val) {
+          window.__API_BASE_URL__ = val;
+        }
+      } catch (e) { /* no-op */ }
+    })();
+  </script>
   <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
 <body>
